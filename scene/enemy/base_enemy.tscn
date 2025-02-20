@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmbrxrx3dglb2"]
+
+[ext_resource type="Script" path="res://scene/enemy/base_enemy.gd" id="1_a24jy"]
+[ext_resource type="Texture2D" uid="uid://bruslgw43o0fw" path="res://texture/Without Sword (for gun)/shadow.png" id="1_etj6w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v76ol"]
+radius = 4.0
+height = 22.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rx6hm"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ttd2"]
+radius = 7.0
+
+[node name="BaseEnemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 14
+script = ExtResource("1_a24jy")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(-1, -2)
+texture = ExtResource("1_etj6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -8)
+shape = SubResource("CapsuleShape2D_v76ol")
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(12, -10)
+sprite_frames = SubResource("SpriteFrames_rx6hm")
+animation = &"idle"
+
+[node name="AtkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AtkArea"]
+position = Vector2(0, -9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3ttd2")
+debug_color = Color(0.95045, 3.36915e-06, 0.568543, 0.42)
+
+[node name="AtkTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="AtkTimer" to="." method="_on_atk_timer_timeout"]

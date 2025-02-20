@@ -1,0 +1,89 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1740065235
+icon.svg::CompressedTexture2D::2063189086300270378::1740023845::1740023856::1::::<><>::
+::res://scene/::1740065219
+main.gd::GDScript::-1::1740064831::0::1::::<>Node2D<>::
+main.tscn::PackedScene::3892624506829375372::1740064843::0::1::::<><>::res://scene/main.gd<>uid://btjht08xbphf5::::res://texture/Tileset.png<>uid://btjmcn186pg8e::::res://ui/canvas_layer.tscn
+::res://scene/bullet/::1740065219
+base_bullet.gd::GDScript::-1::1740030810::0::1::::BaseBullet<>Node2D<>::
+base_bullet.tscn::PackedScene::9023923184040666742::1740064836::0::1::::<><>::res://scene/bullet/base_bullet.gd
+::res://scene/enemy/::1740065219
+base_enemy.gd::GDScript::-1::1740056527::0::1::::BaseEnemy<>CharacterBody2D<>::
+base_enemy.tscn::PackedScene::5618246060637396489::1740064836::0::1::::<><>::res://scene/enemy/base_enemy.gd<>uid://bruslgw43o0fw::::res://texture/Without Sword (for gun)/shadow.png
+ghoul.tscn::PackedScene::7851240357931900148::1740056583::0::1::::<><>::uid://cmbrxrx3dglb2::::res://scene/enemy/base_enemy.tscn<>uid://clci8750mx755::::res://texture/Ghoul/Ghoul Sprite Sheet 62 x 33.png
+::res://scene/player/::1740065219
+player.gd::GDScript::-1::1740055505::0::1::::Player<>CharacterBody2D<>::
+player.tscn::PackedScene::5338400484652834205::1740064836::0::1::::<><>::uid://d0kbahlxf482d::::res://texture/Without Sword (for gun)/Up/04 Stranded - Pack 4 back up-Idle Up.png<>uid://0pn7n051p4wd::::res://texture/Without Sword (for gun)/Down/04 Stranded - Pack 4 back up-Idle Down.png<>res://scene/player/player.gd<>uid://bruslgw43o0fw::::res://texture/Without Sword (for gun)/shadow.png<>uid://cafxerxwqdnr3::::res://texture/Without Sword (for gun)/Down/04 Stranded - Pack 4 back up-Move Down.png<>uid://bntafojuggskn::::res://texture/Without Sword (for gun)/Up/04 Stranded - Pack 4 back up-Move Up.png<>uid://72fsww414e5y::::res://texture/Without Sword (for gun)/04 Stranded - Pack 4 back up-Death.png<>uid://qchqq41s6auu::::res://texture/Without Sword (for gun)/left right/R.png<>uid://dafmnb68etdcu::::res://texture/Without Sword (for gun)/left right/R move.png<>uid://pc8oayn6kmxb::::res://scene/weapon/base_weapon.tscn
+::res://scene/weapon/::1740065219
+base_weapon.gd::GDScript::-1::1740061761::0::1::::BaseWeapon<>Node2D<>::
+base_weapon.tscn::PackedScene::1058990109662367775::1740064836::0::1::::<><>::res://scene/weapon/base_weapon.gd<>uid://rsfj2l2m4kxo::::res://texture/Guns/gun1.png
+gun_2.tscn::PackedScene::1437278447889246489::1740064836::0::1::::<><>::uid://pc8oayn6kmxb::::res://scene/weapon/base_weapon.tscn<>uid://bk10iqntyeinh::::res://texture/Guns/gun2.png
+::res://script/::1740065219
+EnemyData.gd::GDScript::-1::1740056209::0::1::::EnemyData<>Resource<>::
+Game.gd::GDScript::-1::1740063326::0::1::::<>Node<>::
+PlayerData.gd::GDScript::-1::1740054723::0::1::::PlayerData<>Resource<>::
+PlayerManager.gd::GDScript::-1::1740061667::0::1::::<>Node<>::
+::res://texture/::1740065220
+crosshair161.png::CompressedTexture2D::9047327671561874864::1526194926::1740024124::1::::<><>::
+Tileset.png::CompressedTexture2D::3739048426745060876::1661401094::1740024124::1::::<><>::
+::res://texture/Ghoul/::1740065219
+Attack.png::CompressedTexture2D::5762731099730367558::1646265462::1740024124::1::::<><>::
+death.png::CompressedTexture2D::3974054097292921793::1646265494::1740024124::1::::<><>::
+Ghoul Sprite Sheet 62 x 33.png::CompressedTexture2D::5549593798297871922::1646265054::1740024124::1::::<><>::
+hit.png::CompressedTexture2D::8132357664437676320::1646265486::1740024124::1::::<><>::
+spawn.png::CompressedTexture2D::2586922211983073638::1646265508::1740024124::1::::<><>::
+static idle.png::CompressedTexture2D::4265126439395932662::1646265634::1740024124::1::::<><>::
+Wake.png::CompressedTexture2D::6739855049123006859::1646265442::1740024124::1::::<><>::
+Walk.png::CompressedTexture2D::2443626657283977596::1646265450::1740024124::1::::<><>::
+::res://texture/Guns/::1740065219
+gun1.png::CompressedTexture2D::1230690234895849996::1701134514::1740024124::1::::<><>::
+gun2.png::CompressedTexture2D::3143516014200951585::1701134514::1740024124::1::::<><>::
+gun3.png::CompressedTexture2D::7122959607180934704::1701134514::1740024124::1::::<><>::
+gun4.png::CompressedTexture2D::138021425630569422::1701134514::1740024124::1::::<><>::
+gun5.png::CompressedTexture2D::2420432210168410577::1701134514::1740024124::1::::<><>::
+gun6.png::CompressedTexture2D::4507377403099315731::1701134514::1740024124::1::::<><>::
+::res://texture/Spitter/::1740065219
+::res://texture/Spitter/Projectile/::1740065219
+burst 1.png::CompressedTexture2D::8046921192689383790::1646265834::1740024124::1::::<><>::
+burst 2.png::CompressedTexture2D::8446312682436552948::1646265844::1740024124::1::::<><>::
+projectile 16x16.png::CompressedTexture2D::6269408921981077135::1646265812::1740024124::1::::<><>::
+travel.png::CompressedTexture2D::493216084655919921::1646265826::1740024124::1::::<><>::
+::res://texture/Spitter/Spitter/::1740065219
+attack.png::CompressedTexture2D::8040492052124951642::1646265680::1740024124::1::::<><>::
+death.png::CompressedTexture2D::2019712542992399670::1646265696::1740024124::1::::<><>::
+hit.png::CompressedTexture2D::1571783931369926100::1646265688::1740024124::1::::<><>::
+idle.png::CompressedTexture2D::7358126337466136504::1646265660::1740024124::1::::<><>::
+Spitter Sprite Sheet 57 x 39.png::CompressedTexture2D::8799932720143051697::1646265598::1740024124::1::::<><>::
+walk.png::CompressedTexture2D::5016982068417437715::1646265670::1740024124::1::::<><>::
+::res://texture/Summoner/::1740065219
+death.png::CompressedTexture2D::1509223651027324176::1646266046::1740024124::1::::<><>::
+hit.png::CompressedTexture2D::8892846511940155696::1646266038::1740024124::1::::<><>::
+idle.png::CompressedTexture2D::1264766077437587671::1646266016::1740024124::1::::<><>::
+move.png::CompressedTexture2D::4800036421836818434::1646266022::1740024124::1::::<><>::
+summon.png::CompressedTexture2D::1286876041488876451::1646266028::1740024124::1::::<><>::
+Summoner 46x 44.png::CompressedTexture2D::8586054091675902385::1646266004::1740024124::1::::<><>::
+::res://texture/Without Sword (for gun)/::1740065220
+04 Stranded - Pack 4 back up-Death.png::CompressedTexture2D::2302118115883688524::1701133006::1740024124::1::::<><>::
+hero sprite not sword.png::CompressedTexture2D::6571006133944210111::1701133422::1740024124::1::::<><>::
+shadow.png::CompressedTexture2D::3622031480705019380::1739362002::1740024124::1::::<><>::
+::res://texture/Without Sword (for gun)/Down/::1740065220
+04 Stranded - Pack 4 back up-Idle Down.png::CompressedTexture2D::1786533946394720507::1701133006::1740024124::1::::<><>::
+04 Stranded - Pack 4 back up-Move Down.png::CompressedTexture2D::4784567819614297514::1701133006::1740024124::1::::<><>::
+04 Stranded - Pack 4 back up-Roll Down.png::CompressedTexture2D::4282885195204196175::1701133006::1740024124::1::::<><>::
+04 Stranded - Pack 4 back up-Run Down.png::CompressedTexture2D::2961319269598237718::1701133006::1740024124::1::::<><>::
+::res://texture/Without Sword (for gun)/left right/::1740065220
+R move.png::CompressedTexture2D::7170335861001314972::1701133006::1740024124::1::::<><>::
+R Roll.png::CompressedTexture2D::642458404725009732::1701133006::1740024124::1::::<><>::
+R Run.png::CompressedTexture2D::2022840768566772717::1701133006::1740024124::1::::<><>::
+R.png::CompressedTexture2D::1127604731748005844::1701133006::1740024124::1::::<><>::
+::res://texture/Without Sword (for gun)/Up/::1740065220
+04 Stranded - Pack 4 back up-Idle Up.png::CompressedTexture2D::8934688022272651893::1701133006::1740024124::1::::<><>::
+04 Stranded - Pack 4 back up-Move Up.png::CompressedTexture2D::3338108507431307513::1701133006::1740024124::1::::<><>::
+04 Stranded - Pack 4 back up-Roll Up.png::CompressedTexture2D::8952641997493869068::1701133006::1740024124::1::::<><>::
+04 Stranded - Pack 4 back up-Run UP.png::CompressedTexture2D::5818527824484008225::1701133006::1740024124::1::::<><>::
+::res://ui/::1740065220
+canvas_layer.gd::GDScript::-1::1740064165::0::1::::<>CanvasLayer<>::
+canvas_layer.tscn::PackedScene::3739321012613121414::1740064836::0::1::::<><>::res://ui/hud.gd<>res://ui/canvas_layer.gd<>uid://rsfj2l2m4kxo::::res://texture/Guns/gun1.png
+hud.gd::GDScript::-1::1740061275::0::1::::<>Control<>::
+main_ui.gd::GDScript::-1::1740064835::0::1::::<>Control<>::
+main_ui.tscn::PackedScene::8557920538100757848::1740064836::0::1::::<><>::res://ui/main_ui.gd<>uid://bvpu7sgkrfmgy::::res://scene/main.tscn

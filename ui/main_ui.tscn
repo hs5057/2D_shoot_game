@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt6rx3jsiost1"]
+
+[ext_resource type="Script" path="res://ui/main_ui.gd" id="1_a8gum"]
+[ext_resource type="PackedScene" uid="uid://bvpu7sgkrfmgy" path="res://scene/main.tscn" id="2_c832h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46wkj"]
+bg_color = Color(0.541176, 0.270588, 0.270588, 0.945098)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhs4b"]
+bg_color = Color(0.537255, 0.356863, 0.0862745, 0.784314)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bgsg"]
+bg_color = Color(0.14, 0.14, 0.14, 0.470588)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a8gum")
+
+[node name="Main" parent="." instance=ExtResource("2_c832h")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+custom_minimum_size = Vector2(370, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.0
+offset_top = 47.0
+offset_right = 186.0
+offset_bottom = 77.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "2D像素射击游戏"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+custom_minimum_size = Vector2(75, 175)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -175.0
+offset_right = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_right = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
+
+[node name="StartButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.077268, 0.0693067, 0.0349502, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxFlat_46wkj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hhs4b")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bgsg")
+text = "开始游戏"
+
+[node name="ExitButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.077268, 0.0693067, 0.0349502, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxFlat_46wkj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hhs4b")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bgsg")
+text = "退出游戏"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0566781, 0.0253799, 0.0253024, 1)
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

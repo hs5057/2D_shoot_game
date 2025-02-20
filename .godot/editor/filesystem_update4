@@ -1,0 +1,8 @@
+res://scene/main.tscn
+res://scene/weapon/base_weapon.tscn
+res://scene/player/player.tscn
+res://scene/bullet/base_bullet.tscn
+res://scene/enemy/base_enemy.tscn
+res://ui/canvas_layer.tscn
+res://scene/weapon/gun_2.tscn
+res://ui/main_ui.tscn
