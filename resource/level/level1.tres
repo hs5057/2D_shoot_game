@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://ctpvp5m0dsbs3"]
+
+[ext_resource type="PackedScene" uid="uid://dj4g1tstxh01u" path="res://scene/enemy/ghoul.tscn" id="1_8n7ke"]
+[ext_resource type="Script" path="res://script/LevelData.gd" id="1_nohdt"]
+
+[resource]
+script = ExtResource("1_nohdt")
+enemy_scene = ExtResource("1_8n7ke")
+max_count = 15
+tick = 1.0
+once_count = 3

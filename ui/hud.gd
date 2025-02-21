@@ -4,6 +4,7 @@ extends Control
 @onready var bullet_label: Label = %Bullet
 @onready var weapon_name_label: Label = %WeaponName
 @onready var weapon_texture: TextureRect = %WeaponTexture
+@onready var level_label: Label = %LevelLabel
 
 
 func _ready() -> void:
@@ -13,6 +14,12 @@ func _ready() -> void:
 	PlayerManager.on_weapon_reload.connect(on_weapon_reload)
 	
 	PlayerManager.on_weapon_changed.connect(on_weapon_changed)
+	
+	LevelManager.on_level_changed.connect(on_level_changed)
+
+
+func on_level_changed(_level_data: LevelData) -> void:
+	level_label.text = '关卡 %s' % LevelManager.current_level
 
 
 func on_player_hp_changed(_current,_max) -> void:

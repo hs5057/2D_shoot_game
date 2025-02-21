@@ -24,6 +24,8 @@ func change_weapon(weapon: BaseWeapon) -> void:
 	var current_weapon = Game.player.weapon_node.get_child(0)
 	if current_weapon:
 		current_weapon.queue_free()
+
+	weapon.player = Game.player
 	Game.player.weapon_node.add_child(weapon)
 
 

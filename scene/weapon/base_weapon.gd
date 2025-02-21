@@ -10,12 +10,16 @@ const _pre_bullet = preload("res://scene/bullet/base_bullet.tscn")
 
 var current_bullet_count : int = 0 # 当前子弹数量
 var current_rof_tick = 0
+var player: Player # 属于某个玩家
 
 @onready var bullet_point: Node2D = $BulletPoint
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var fire_particles: GPUParticles2D = $GPUParticles2D
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func _ready() -> void:
+	fire_particles.lifetime = weapon_rof - 0.01
 	current_bullet_count = bullet_max
 	PlayerManager.on_weapon_changed.emit(self)
 	PlayerManager.on_bullet_count_changed.emit(current_bullet_count,bullet_max)
@@ -23,16 +27,30 @@ func _ready() -> void:
 
 # 射击
 func shoot() -> void:
-	var instance = _pre_bullet.instantiate()
-	instance.global_position = bullet_point.global_position
-	instance.dir = global_position.direction_to(get_global_mouse_position())
-	get_tree().root.add_child(instance)
+	var bullet_instance = _pre_bullet.instantiate()
+	bullet_instance.global_position = bullet_point.global_position
+	bullet_instance.dir = global_position.direction_to(get_global_mouse_position())
+	bullet_instance.current_weapon = self
+	Game.map.bullet_node.add_child(bullet_instance)
 	
 	current_bullet_count -= 1
 	PlayerManager.on_bullet_count_changed.emit(current_bullet_count,bullet_max)
 	
 	if current_bullet_count <= 0:
 		reload()
+		
+	weapon_anim()
+	
+
+func weapon_anim() -> void:
+	fire_particles.restart()
+	var tween = create_tween().set_ease(Tween.EASE_IN)
+	tween.tween_property(sprite, "scale:x", 0.7, weapon_rof / 2 )
+	tween.tween_property(sprite, "scale:x", 1.0, weapon_rof / 2 )
+	
+	audio_player.play()
+	
+	Game.camera_offset(Vector2(-0.5, 1),weapon_rof)
 
 
 # 更换弹匣

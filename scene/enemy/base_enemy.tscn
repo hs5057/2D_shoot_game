@@ -1,11 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmbrxrx3dglb2"]
+[gd_scene load_steps=7 format=3 uid="uid://cmbrxrx3dglb2"]
 
 [ext_resource type="Script" path="res://scene/enemy/base_enemy.gd" id="1_a24jy"]
 [ext_resource type="Texture2D" uid="uid://bruslgw43o0fw" path="res://texture/Without Sword (for gun)/shadow.png" id="1_etj6w"]
+[ext_resource type="AudioStream" uid="uid://b3fh88c16ssxd" path="res://audio/physics_body_impact_bullet_1.mp3" id="3_ftjyc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v76ol"]
-radius = 4.0
-height = 22.0
+radius = 6.0
+height = 24.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rx6hm"]
 animations = [{
@@ -41,6 +42,8 @@ sprite_frames = SubResource("SpriteFrames_rx6hm")
 animation = &"idle"
 
 [node name="AtkArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AtkArea"]
 position = Vector2(0, -9)
@@ -52,4 +55,17 @@ debug_color = Color(0.95045, 3.36915e-06, 0.568543, 0.42)
 wait_time = 0.5
 one_shot = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ftjyc")
+volume_db = -10.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 7.0
+neighbor_distance = 200.0
+max_neighbors = 8
+max_speed = 0.01
+
 [connection signal="timeout" from="AtkTimer" to="." method="_on_atk_timer_timeout"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

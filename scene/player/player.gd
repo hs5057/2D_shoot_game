@@ -4,6 +4,7 @@ class_name Player
 @onready var anim: AnimatedSprite2D = %AnimatedSprite2D
 @onready var body: Node2D = $Body
 @onready var weapon_node: Node2D = %WeaponNode
+@onready var camera: Camera2D = $Camera2D
 
 var speed : float = 55.0
 var _current_anim : String = "down_"

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://brxbqgubk7ype"]
+
+[ext_resource type="FontFile" uid="uid://jgabob6qnqud" path="res://fonts/SmileySans-Oblique.ttf" id="1_ejmxj"]
+[ext_resource type="Script" path="res://ui/hit_label.gd" id="1_fm5f2"]
+
+[node name="HitLabel" type="Node2D"]
+script = ExtResource("1_fm5f2")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(45, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -23.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(22.5, 11.5)
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ejmxj")
+theme_override_font_sizes/font_size = 12
+text = "-9999"
+horizontal_alignment = 1
+vertical_alignment = 1

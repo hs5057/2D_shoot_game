@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt6rx3jsiost1"]
+[gd_scene load_steps=7 format=3 uid="uid://dt6rx3jsiost1"]
 
 [ext_resource type="Script" path="res://ui/main_ui.gd" id="1_a8gum"]
 [ext_resource type="PackedScene" uid="uid://bvpu7sgkrfmgy" path="res://scene/main.tscn" id="2_c832h"]
+[ext_resource type="FontFile" uid="uid://jgabob6qnqud" path="res://fonts/SmileySans-Oblique.ttf" id="3_u7vxp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46wkj"]
 bg_color = Color(0.541176, 0.270588, 0.270588, 0.945098)
@@ -51,35 +52,39 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Control"]
-custom_minimum_size = Vector2(370, 30)
+custom_minimum_size = Vector2(370, 60)
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -184.0
-offset_top = 47.0
-offset_right = 186.0
-offset_bottom = 77.0
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -100.0
+offset_right = 185.0
+offset_bottom = -40.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 20
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_u7vxp")
+theme_override_font_sizes/font_size = 36
 text = "2D像素射击游戏"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
-custom_minimum_size = Vector2(75, 175)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -175.0
-offset_right = 45.0
+offset_left = -37.5
+offset_top = -72.0
+offset_right = 37.5
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 70
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
 custom_minimum_size = Vector2(75, 0)
@@ -92,7 +97,8 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.077268, 0.0693067, 0.0349502, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("3_u7vxp")
+theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxFlat_46wkj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hhs4b")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1bgsg")
@@ -103,7 +109,8 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.077268, 0.0693067, 0.0349502, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("3_u7vxp")
+theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxFlat_46wkj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hhs4b")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1bgsg")

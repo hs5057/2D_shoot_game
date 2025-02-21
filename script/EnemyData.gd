@@ -2,11 +2,11 @@ extends Resource
 class_name EnemyData
 
 signal on_death() # 死亡通知
-signal on_hit(damage) # 受击通知
+signal on_hit(_damage) # 受击通知
 
 # 敌人属性
 @export var damage : int = 5 # 伤害值
-@export var max_hp : int = 10 # 最大生命值
+@export var max_hp : int = 30 # 最大生命值
 
 var current_hp: # 敌人当前生命值
 	set(_value):
