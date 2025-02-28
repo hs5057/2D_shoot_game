@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://cib7w8q1d3twv"]
+[gd_scene load_steps=88 format=3 uid="uid://cib7w8q1d3twv"]
 
 [ext_resource type="Texture2D" uid="uid://d0kbahlxf482d" path="res://texture/Without Sword (for gun)/Up/04 Stranded - Pack 4 back up-Idle Up.png" id="1_6rlig"]
 [ext_resource type="Texture2D" uid="uid://0pn7n051p4wd" path="res://texture/Without Sword (for gun)/Down/04 Stranded - Pack 4 back up-Idle Down.png" id="1_fvc2w"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://72fsww414e5y" path="res://texture/Without Sword (for gun)/04 Stranded - Pack 4 back up-Death.png" id="3_3pcc1"]
 [ext_resource type="Texture2D" uid="uid://qchqq41s6auu" path="res://texture/Without Sword (for gun)/left right/R.png" id="3_hxirn"]
 [ext_resource type="Texture2D" uid="uid://dafmnb68etdcu" path="res://texture/Without Sword (for gun)/left right/R move.png" id="4_cjhsb"]
-[ext_resource type="PackedScene" uid="uid://pc8oayn6kmxb" path="res://scene/weapon/base_weapon.tscn" id="9_3e5i4"]
+[ext_resource type="PackedScene" uid="uid://kx34vsb54hv3" path="res://component/audio_player_component.tscn" id="10_0tfsg"]
+[ext_resource type="AudioStream" uid="uid://bxj7y4og8q74d" path="res://audio/396331_nioczkus_1911-reload_(online-audio-converter.com).ogg" id="11_koynx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gufre"]
 radius = 6.0
@@ -564,6 +565,9 @@ animations = [{
 "speed": 14.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfmvm"]
+radius = 30.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 0
@@ -582,10 +586,10 @@ shape = SubResource("CapsuleShape2D_gufre")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(12, -10)
 sprite_frames = SubResource("SpriteFrames_bfjse")
 animation = &"death"
 autoplay = "down_idle"
+offset = Vector2(12, -10)
 metadata/_edit_lock_ = true
 
 [node name="WeaponNode" type="Node2D" parent="Body"]
@@ -593,7 +597,18 @@ unique_name_in_owner = true
 z_index = 1
 position = Vector2(0, -8)
 
-[node name="BaseWeapon" parent="Body/WeaponNode" instance=ExtResource("9_3e5i4")]
+[node name="PickUpArea" type="Area2D" parent="Body"]
+position = Vector2(0, -8)
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/PickUpArea"]
+shape = SubResource("CircleShape2D_xfmvm")
+debug_color = Color(1, 1, 0, 0.431373)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+
+[node name="AudioPlayerComponent" parent="." instance=ExtResource("10_0tfsg")]
+volume_db = -15.0
+streams = Array[AudioStream]([ExtResource("11_koynx")])

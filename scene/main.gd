@@ -10,6 +10,7 @@ const PLAYER = preload("res://scene/player/player.tscn")
 @onready var enemy_node: Node2D = %EnemyNode
 @onready var bullet_node: Node2D = %BulletNode
 @onready var entity_node: Node2D = $EntityNode
+@onready var items: Node2D = %Items
 
 
 

@@ -27,7 +27,7 @@ func get_random_point() -> Vector2:
 	var map_land = Game.map.land as TileMapLayer
 	var rect = map_land.get_used_rect()
 	
-	var spawn_point = map_land.map_to_local(Vector2i(
+	var spawn_point = map_land.map_to_local(Vector2(
 			randf_range(rect.position.x,rect.position.x + rect.size.x), 
 			randf_range(rect.position.y,rect.position.y + rect.size.y)))
 	

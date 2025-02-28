@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2fkv84li331y"]
+
+[ext_resource type="Texture2D" uid="uid://b8j83kwa44c2m" path="res://texture/Items/coin-2.png" id="1_urfu0"]
+[ext_resource type="Script" path="res://scene/coin.gd" id="1_y4s1k"]
+[ext_resource type="AudioStream" uid="uid://bila0lx0a6y6o" path="res://audio/pickup/699498__valenspire__coin_drop_03.wav" id="3_jm2b3"]
+[ext_resource type="PackedScene" uid="uid://kx34vsb54hv3" path="res://component/audio_player_component.tscn" id="3_wapc2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rc3ra"]
+radius = 3.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aup08"]
+atlas = ExtResource("1_urfu0")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql7uc"]
+atlas = ExtResource("1_urfu0")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1h0k"]
+atlas = ExtResource("1_urfu0")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6nks"]
+atlas = ExtResource("1_urfu0")
+region = Rect2(30, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rq4uu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aup08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql7uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1h0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6nks")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Coin" type="Area2D"]
+z_index = 1
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("1_y4s1k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.2, -2.5)
+shape = SubResource("CircleShape2D_rc3ra")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_rq4uu")
+autoplay = "default"
+frame_progress = 0.598521
+offset = Vector2(0, -5)
+
+[node name="AudioPlayerComponent" parent="." instance=ExtResource("3_wapc2")]
+streams = Array[AudioStream]([ExtResource("3_jm2b3")])
+min_pitch = 0.8
+max_pitch = 1.2

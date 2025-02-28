@@ -80,7 +80,7 @@ texture = ExtResource("1_lwi1m")
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_s1vmo")
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" groups=["main"]]
 y_sort_enabled = true
 script = ExtResource("1_4yi2r")
 
@@ -118,4 +118,7 @@ gizmo_extents = 30.0
 unique_name_in_owner = true
 
 [node name="BulletNode" type="Node2D" parent="EntityNode"]
+unique_name_in_owner = true
+
+[node name="Items" type="Node2D" parent="EntityNode"]
 unique_name_in_owner = true

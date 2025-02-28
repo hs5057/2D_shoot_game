@@ -21,8 +21,9 @@ radius = 7.0
 
 [node name="BaseEnemy" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 14
+collision_mask = 12
 script = ExtResource("1_a24jy")
+gold_found = 90
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(-1, -2)
@@ -62,9 +63,8 @@ volume_db = -10.0
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
 avoidance_enabled = true
-radius = 7.0
+radius = 8.0
 neighbor_distance = 200.0
-max_neighbors = 8
 max_speed = 0.01
 
 [connection signal="timeout" from="AtkTimer" to="." method="_on_atk_timer_timeout"]

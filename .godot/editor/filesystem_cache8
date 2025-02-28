@@ -1,44 +1,54 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1740143196
+::res://::1740753816
 icon.svg::CompressedTexture2D::2063189086300270378::1740023845::1740023856::1::::<><>::
-::res://audio/::1740126822
+::res://audio/::1740755036
+396331_nioczkus_1911-reload_(online-audio-converter.com).ogg::AudioStreamOggVorbis::4021330835098422701::1740755020::1740755039::1::::<><>::
 physics_body_impact_bullet_1.mp3::AudioStreamMP3::4362515882060173593::1541700775::1740126822::1::::<><>::
 wpn_fire_hk416.mp3::AudioStreamMP3::1654732466667703610::1538073772::1740126822::1::::<><>::
 wpn_fire_m4.mp3::AudioStreamMP3::7570312750229485871::1538073138::1740126822::1::::<><>::
 wpn_reload_end.mp3::AudioStreamMP3::4403822586364297352::1537980195::1740126822::1::::<><>::
 wpn_reload_start.mp3::AudioStreamMP3::7931116854013119556::1537980195::1740126822::1::::<><>::
+::res://audio/pickup/::1740753267
+699498__valenspire__coin_drop_03.wav::AudioStreamWAV::2970684847364126052::1740753239::1740753267::1::::<><>::
+::res://component/::1740754747
+audio_player_component.tscn::PackedScene::751122119427908330::1740754747::0::1::::<><>::uid://bila0lx0a6y6o::::res://audio/pickup/699498__valenspire__coin_drop_03.wav<>res://component/audio_player_component.gd
+audio_player_component.gd::GDScript::-1::1740754663::0::1::::AudioPlayerComponent<>AudioStreamPlayer<>::
 ::res://fonts/::1740106773
 SmileySans-Oblique.ttf::FontFile::644088383362671091::1707301376::1740106773::1::::<><>::
 ::res://resource/::1740108041
-::res://resource/level/::1740142553
-level1.tres::Resource/LevelData::6138698501955144420::1740142553::0::1::::<><>::uid://dj4g1tstxh01u::::res://scene/enemy/ghoul.tscn<>res://script/LevelData.gd
-level2.tres::Resource/LevelData::4774318767113442245::1740142553::0::1::::<><>::uid://dj4g1tstxh01u::::res://scene/enemy/ghoul.tscn<>res://script/LevelData.gd
-::res://scene/::1740142751
-main.gd::GDScript::-1::1740113864::0::1::::<>Node2D<>::
-main.tscn::PackedScene::3892624506829375372::1740142751::0::1::::<><>::res://scene/main.gd<>uid://btjht08xbphf5::::res://texture/Tileset.png<>uid://btjmcn186pg8e::::res://ui/canvas_layer.tscn
-::res://scene/bullet/::1740142751
-base_bullet.gd::GDScript::-1::1740141180::0::1::::BaseBullet<>Node2D<>::
-base_bullet.tscn::PackedScene::9023923184040666742::1740142751::0::1::::<><>::res://scene/bullet/base_bullet.gd
-::res://scene/enemy/::1740143141
-base_enemy.gd::GDScript::-1::1740142298::0::1::::BaseEnemy<>CharacterBody2D<>::
-base_enemy.tscn::PackedScene::5618246060637396489::1740142751::0::1::::<><>::res://scene/enemy/base_enemy.gd<>uid://bruslgw43o0fw::::res://texture/Without Sword (for gun)/shadow.png<>uid://b3fh88c16ssxd::::res://audio/physics_body_impact_bullet_1.mp3
-ghoul.tscn::PackedScene::7851240357931900148::1740143141::0::1::::<><>::uid://cmbrxrx3dglb2::::res://scene/enemy/base_enemy.tscn<>uid://clci8750mx755::::res://texture/Ghoul/Ghoul Sprite Sheet 62 x 33.png
-::res://scene/player/::1740143133
-player.gd::GDScript::-1::1740142986::0::1::::Player<>CharacterBody2D<>::
-player.tscn::PackedScene::5338400484652834205::1740143133::0::1::::<><>::uid://d0kbahlxf482d::::res://texture/Without Sword (for gun)/Up/04 Stranded - Pack 4 back up-Idle Up.png<>uid://0pn7n051p4wd::::res://texture/Without Sword (for gun)/Down/04 Stranded - Pack 4 back up-Idle Down.png<>res://scene/player/player.gd<>uid://bruslgw43o0fw::::res://texture/Without Sword (for gun)/shadow.png<>uid://cafxerxwqdnr3::::res://texture/Without Sword (for gun)/Down/04 Stranded - Pack 4 back up-Move Down.png<>uid://bntafojuggskn::::res://texture/Without Sword (for gun)/Up/04 Stranded - Pack 4 back up-Move Up.png<>uid://72fsww414e5y::::res://texture/Without Sword (for gun)/04 Stranded - Pack 4 back up-Death.png<>uid://qchqq41s6auu::::res://texture/Without Sword (for gun)/left right/R.png<>uid://dafmnb68etdcu::::res://texture/Without Sword (for gun)/left right/R move.png<>uid://pc8oayn6kmxb::::res://scene/weapon/base_weapon.tscn
-::res://scene/weapon/::1740141025
-base_weapon.gd::GDScript::-1::1740126879::0::1::::BaseWeapon<>Node2D<>::
-base_weapon.tscn::PackedScene::1058990109662367775::1740141025::0::1::::<><>::res://scene/weapon/base_weapon.gd<>uid://rsfj2l2m4kxo::::res://texture/Guns/gun1.png<>uid://df4d7emxywwu6::::res://audio/wpn_fire_m4.mp3
-gun_2.tscn::PackedScene::1437278447889246489::1740106197::0::1::::<><>::uid://pc8oayn6kmxb::::res://scene/weapon/base_weapon.tscn<>uid://bk10iqntyeinh::::res://texture/Guns/gun2.png
-::res://script/::1740143087
+::res://resource/level/::1740286747
+level1.tres::Resource/LevelData::6138698501955144420::1740286734::0::1::::<><>::uid://dj4g1tstxh01u::::res://scene/enemy/ghoul.tscn<>res://script/LevelData.gd
+level2.tres::Resource/LevelData::4774318767113442245::1740286747::0::1::::<><>::uid://dj4g1tstxh01u::::res://scene/enemy/ghoul.tscn<>res://script/LevelData.gd
+::res://scene/::1740754877
+coin.gd::GDScript::-1::1740753525::0::1::::<>Area2D<>::
+coin.tscn::PackedScene::4292487800871438716::1740753984::0::1::::<><>::uid://b8j83kwa44c2m::::res://texture/Items/coin-2.png<>res://scene/coin.gd<>uid://bila0lx0a6y6o::::res://audio/pickup/699498__valenspire__coin_drop_03.wav<>uid://kx34vsb54hv3::::res://component/audio_player_component.tscn
+hit_effect.gd::GDScript::-1::1740146345::0::1::::<>Node2D<>::
+hit_effect.tscn::PackedScene::8702927033379247296::1740748177::0::1::::<><>::res://scene/hit_effect.gd
+main.gd::GDScript::-1::1740749059::0::1::::<>Node2D<>::
+main.tscn::PackedScene::3892624506829375372::1740754877::0::1::::<><>::res://scene/main.gd<>uid://btjht08xbphf5::::res://texture/Tileset.png<>uid://btjmcn186pg8e::::res://ui/canvas_layer.tscn
+::res://scene/bullet/::1740748177
+base_bullet.gd::GDScript::-1::1740147386::0::1::::BaseBullet<>Node2D<>::
+base_bullet.tscn::PackedScene::9023923184040666742::1740748177::0::1::::<><>::res://scene/bullet/base_bullet.gd
+::res://scene/enemy/::1740754878
+base_enemy.gd::GDScript::-1::1740753966::0::1::::BaseEnemy<>CharacterBody2D<>::
+base_enemy.tscn::PackedScene::5618246060637396489::1740754878::0::1::::<><>::res://scene/enemy/base_enemy.gd<>uid://bruslgw43o0fw::::res://texture/Without Sword (for gun)/shadow.png<>uid://b3fh88c16ssxd::::res://audio/physics_body_impact_bullet_1.mp3
+ghoul.tscn::PackedScene::7851240357931900148::1740748176::0::1::::<><>::uid://cmbrxrx3dglb2::::res://scene/enemy/base_enemy.tscn<>uid://clci8750mx755::::res://texture/Ghoul/Ghoul Sprite Sheet 62 x 33.png
+::res://scene/player/::1740754933
+player.gd::GDScript::-1::1740754853::0::1::::Player<>CharacterBody2D<>::
+player.tscn::PackedScene::5338400484652834205::1740754933::0::1::::<><>::uid://d0kbahlxf482d::::res://texture/Without Sword (for gun)/Up/04 Stranded - Pack 4 back up-Idle Up.png<>uid://0pn7n051p4wd::::res://texture/Without Sword (for gun)/Down/04 Stranded - Pack 4 back up-Idle Down.png<>res://scene/player/player.gd<>uid://bruslgw43o0fw::::res://texture/Without Sword (for gun)/shadow.png<>uid://cafxerxwqdnr3::::res://texture/Without Sword (for gun)/Down/04 Stranded - Pack 4 back up-Move Down.png<>uid://bntafojuggskn::::res://texture/Without Sword (for gun)/Up/04 Stranded - Pack 4 back up-Move Up.png<>uid://72fsww414e5y::::res://texture/Without Sword (for gun)/04 Stranded - Pack 4 back up-Death.png<>uid://qchqq41s6auu::::res://texture/Without Sword (for gun)/left right/R.png<>uid://dafmnb68etdcu::::res://texture/Without Sword (for gun)/left right/R move.png<>uid://kx34vsb54hv3::::res://component/audio_player_component.tscn
+::res://scene/weapon/::1740753983
+base_weapon.gd::GDScript::-1::1740747782::0::1::::BaseWeapon<>Node2D<>::
+base_weapon.tscn::PackedScene::1058990109662367775::1740753983::0::1::::<><>::res://scene/weapon/base_weapon.gd<>uid://rsfj2l2m4kxo::::res://texture/Guns/gun1.png<>uid://df4d7emxywwu6::::res://audio/wpn_fire_m4.mp3
+gun_2.tscn::PackedScene::1437278447889246489::1740748177::0::1::::<><>::uid://pc8oayn6kmxb::::res://scene/weapon/base_weapon.tscn<>uid://bk10iqntyeinh::::res://texture/Guns/gun2.png
+::res://script/::1740754870
 EnemyData.gd::GDScript::-1::1740142445::0::1::::EnemyData<>Resource<>::
 EnemyManager.gd::GDScript::-1::1740114968::0::1::::<>Node<>::
-Game.gd::GDScript::-1::1740143087::0::1::::<>Node<>::
-LevelData.gd::GDScript::-1::1740115707::0::1::::LevelData<>Resource<>::
+Game.gd::GDScript::-1::1740288801::0::1::::<>Node<>::
+LevelData.gd::GDScript::-1::1740289388::0::1::::LevelData<>Resource<>::
 LevelManager.gd::GDScript::-1::1740141171::0::1::::<>Node<>::
 PlayerData.gd::GDScript::-1::1740054723::0::1::::PlayerData<>Resource<>::
-PlayerManager.gd::GDScript::-1::1740115566::0::1::::<>Node<>::
-::res://texture/::1740065220
+PlayerManager.gd::GDScript::-1::1740754870::0::1::::<>Node<>::
+::res://texture/::1740748715
 crosshair161.png::CompressedTexture2D::9047327671561874864::1526194926::1740024124::1::::<><>::
 Tileset.png::CompressedTexture2D::3739048426745060876::1661401094::1740024124::1::::<><>::
 ::res://texture/Ghoul/::1740065219
@@ -57,6 +67,8 @@ gun3.png::CompressedTexture2D::7122959607180934704::1701134514::1740024124::1:::
 gun4.png::CompressedTexture2D::138021425630569422::1701134514::1740024124::1::::<><>::
 gun5.png::CompressedTexture2D::2420432210168410577::1701134514::1740024124::1::::<><>::
 gun6.png::CompressedTexture2D::4507377403099315731::1701134514::1740024124::1::::<><>::
+::res://texture/Items/::1740748720
+coin-2.png::CompressedTexture2D::4723286145784433506::1474823181::1740748720::1::::<><>::
 ::res://texture/Spitter/::1740065219
 ::res://texture/Spitter/Projectile/::1740065219
 burst 1.png::CompressedTexture2D::8046921192689383790::1646265834::1740024124::1::::<><>::
@@ -96,11 +108,11 @@ R.png::CompressedTexture2D::1127604731748005844::1701133006::1740024124::1::::<>
 04 Stranded - Pack 4 back up-Move Up.png::CompressedTexture2D::3338108507431307513::1701133006::1740024124::1::::<><>::
 04 Stranded - Pack 4 back up-Roll Up.png::CompressedTexture2D::8952641997493869068::1701133006::1740024124::1::::<><>::
 04 Stranded - Pack 4 back up-Run UP.png::CompressedTexture2D::5818527824484008225::1701133006::1740024124::1::::<><>::
-::res://ui/::1740142751
-canvas_layer.gd::GDScript::-1::1740064165::0::1::::<>CanvasLayer<>::
-canvas_layer.tscn::PackedScene::3739321012613121414::1740142751::0::1::::<><>::res://ui/hud.gd<>res://ui/canvas_layer.gd<>uid://rsfj2l2m4kxo::::res://texture/Guns/gun1.png<>uid://jgabob6qnqud::::res://fonts/SmileySans-Oblique.ttf
+::res://ui/::1740748176
+canvas_layer.gd::GDScript::-1::1740282939::0::1::::<>CanvasLayer<>::
+canvas_layer.tscn::PackedScene::3739321012613121414::1740748176::0::1::::<><>::res://ui/hud.gd<>res://ui/canvas_layer.gd<>uid://rsfj2l2m4kxo::::res://texture/Guns/gun1.png<>uid://jgabob6qnqud::::res://fonts/SmileySans-Oblique.ttf<>uid://d15ufuv842cxs::::res://texture/crosshair161.png
 hit_label.gd::GDScript::-1::1740124833::0::1::::<>Node2D<>::
-hit_label.tscn::PackedScene::3627201349674545186::1740126954::0::1::::<><>::uid://jgabob6qnqud::::res://fonts/SmileySans-Oblique.ttf<>res://ui/hit_label.gd
-hud.gd::GDScript::-1::1740110192::0::1::::<>Control<>::
+hit_label.tscn::PackedScene::3627201349674545186::1740151322::0::1::::<><>::uid://jgabob6qnqud::::res://fonts/SmileySans-Oblique.ttf<>res://ui/hit_label.gd
+hud.gd::GDScript::-1::1740289622::0::1::::<>Control<>::
 main_ui.gd::GDScript::-1::1740064835::0::1::::<>Control<>::
 main_ui.tscn::PackedScene::8557920538100757848::1740122466::0::1::::<><>::res://ui/main_ui.gd<>uid://bvpu7sgkrfmgy::::res://scene/main.tscn<>uid://jgabob6qnqud::::res://fonts/SmileySans-Oblique.ttf

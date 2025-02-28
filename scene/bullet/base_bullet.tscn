@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scene/bullet/base_bullet.gd" id="1_xcsxd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu1h4"]
-size = Vector2(6, 2)
+size = Vector2(2, 2)
 
 [node name="BaseBullet" type="Node2D"]
 script = ExtResource("1_xcsxd")

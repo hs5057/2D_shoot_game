@@ -5,8 +5,11 @@
 
 [node name="Gun2" instance=ExtResource("1_oqqx5")]
 weapon_name = "2号武器"
+weapon_index = 2
 bullet_max = 60
+damage = 8
 weapon_rof = 0.15
+reload_time = 1.5
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_7moub")

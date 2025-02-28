@@ -3,6 +3,7 @@ extends Node
 const HIT_LABEL = preload("res://ui/hit_label.tscn")
 var map: Node2D # 游戏场景节点
 var player : Player # 玩家节点
+var current_weapon : BaseWeapon # 当前武器
 
 signal on_game_start() # 游戏开始信号
 
@@ -12,7 +13,7 @@ signal on_game_start() # 游戏开始信号
 func damage(origin:Node2D , target:Node2D) -> void:
 	if origin is Player: # 玩家对怪物造成伤害
 		if target is BaseEnemy:
-			target.enemy_data.current_hp -= PlayerManager.player_data.damage
+			target.enemy_data.current_hp -= PlayerManager.player_data.damage + Game.current_weapon.damage
 	
 	if origin is BaseEnemy: # 怪物对玩家造成伤害
 		if target is Player:

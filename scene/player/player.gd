@@ -5,6 +5,7 @@ class_name Player
 @onready var body: Node2D = $Body
 @onready var weapon_node: Node2D = %WeaponNode
 @onready var camera: Camera2D = $Camera2D
+@onready var audio_player_component: AudioPlayerComponent = $AudioPlayerComponent
 
 var speed : float = 55.0
 var _current_anim : String = "down_"
@@ -12,6 +13,8 @@ var _current_anim : String = "down_"
 
 func _ready() -> void:
 	Game.player = self
+	var first_weapon_instance = PlayerManager.first_weapon.instantiate()
+	weapon_node.add_child(first_weapon_instance)
 	PlayerManager.on_player_death.connect(
 		func () -> void:
 			weapon_node.hide()
@@ -19,7 +22,7 @@ func _ready() -> void:
 	)
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	if PlayerManager.is_death():
 		return
@@ -71,3 +74,7 @@ func get_movement_dir() -> String:
 		return "up_"
 	
 	return "lr_"
+
+
+func pick_up(_body:Node2D) -> void:
+	print("pick_up")
