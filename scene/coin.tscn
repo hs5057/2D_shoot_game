@@ -1,12 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2fkv84li331y"]
+[gd_scene load_steps=14 format=3 uid="uid://b2fkv84li331y"]
 
 [ext_resource type="Texture2D" uid="uid://b8j83kwa44c2m" path="res://texture/Items/coin-2.png" id="1_urfu0"]
 [ext_resource type="Script" path="res://scene/coin.gd" id="1_y4s1k"]
-[ext_resource type="AudioStream" uid="uid://bila0lx0a6y6o" path="res://audio/pickup/699498__valenspire__coin_drop_03.wav" id="3_jm2b3"]
+[ext_resource type="Texture2D" uid="uid://bruslgw43o0fw" path="res://texture/Without Sword (for gun)/shadow.png" id="2_74rqq"]
 [ext_resource type="PackedScene" uid="uid://kx34vsb54hv3" path="res://component/audio_player_component.tscn" id="3_wapc2"]
+[ext_resource type="AudioStream" uid="uid://ct8r1yvqfxx0f" path="res://audio/pickup/drop_002.ogg" id="6_a21m3"]
+[ext_resource type="AudioStream" uid="uid://dp67tpyevcaya" path="res://audio/pickup/drop_003.ogg" id="7_2y6vw"]
+[ext_resource type="AudioStream" uid="uid://desjrvlv8lub3" path="res://audio/pickup/drop_004.ogg" id="8_gk3tx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rc3ra"]
-radius = 3.5
+radius = 4.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aup08"]
 atlas = ExtResource("1_urfu0")
@@ -50,8 +53,15 @@ collision_layer = 32
 collision_mask = 16
 script = ExtResource("1_y4s1k")
 
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(0, -1)
+scale = Vector2(0.3, 0.34)
+texture = ExtResource("2_74rqq")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.2, -2.5)
+visible = false
+position = Vector2(-0.2, -3.5)
 shape = SubResource("CircleShape2D_rc3ra")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -62,6 +72,5 @@ frame_progress = 0.598521
 offset = Vector2(0, -5)
 
 [node name="AudioPlayerComponent" parent="." instance=ExtResource("3_wapc2")]
-streams = Array[AudioStream]([ExtResource("3_jm2b3")])
-min_pitch = 0.8
-max_pitch = 1.2
+volume_db = -7.0
+streams = Array[AudioStream]([ExtResource("6_a21m3"), ExtResource("7_2y6vw"), ExtResource("8_gk3tx")])

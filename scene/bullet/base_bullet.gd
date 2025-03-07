@@ -25,9 +25,10 @@ func _physics_process(delta: float) -> void:
 	#global_position += dir * delta * speed
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is BaseEnemy:
-		Game.damage(Game.player , body)
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	var _body = area.owner
+	if _body is BaseEnemy:
+		Game.damage(Game.player , _body)
 		set_physics_process(false)
 		var hit_effect_instance = HIT_EFFECT.instantiate()
 		Game.map.add_child(hit_effect_instance)

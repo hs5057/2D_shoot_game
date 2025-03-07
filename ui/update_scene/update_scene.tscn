@@ -1,0 +1,367 @@
+[gd_scene load_steps=22 format=3 uid="uid://cp2i2g61q14os"]
+
+[ext_resource type="Texture2D" uid="uid://wbic8ma3uy1j" path="res://texture/attribute_item/basic_damage.png" id="1_3xont"]
+[ext_resource type="Script" path="res://ui/update_scene/update_scene.gd" id="1_f2rtg"]
+[ext_resource type="FontFile" uid="uid://jgabob6qnqud" path="res://fonts/SmileySans-Oblique.ttf" id="2_4rxvh"]
+[ext_resource type="Texture2D" uid="uid://b8j83kwa44c2m" path="res://texture/Items/coin-2.png" id="3_7u3s7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oo8it"]
+bg_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm7x4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6uh37"]
+bg_color = Color(0.194904, 0.191312, 0.212852, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8cr8"]
+bg_color = Color(0.263623, 0.259138, 0.28608, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8nudw"]
+bg_color = Color(0.2216, 0.216, 0.24, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vq7r6"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.355314, 0.355314, 0.355313, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8io4m"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_leogy"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tafgn"]
+bg_color = Color(0.129559, 0.129558, 0.129559, 1)
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwf7y"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tilbi"]
+atlas = ExtResource("3_7u3s7")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhc3g"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtdd4"]
+content_margin_right = 7.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljkgi"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iorbj"]
+bg_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83psd"]
+bg_color = Color(0.099986, 0.099986, 0.099986, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6apfs"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+anti_aliasing = false
+
+[node name="UpdateScene" type="CanvasLayer"]
+process_mode = 3
+layer = 120
+script = ExtResource("1_f2rtg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.08865, 0.081, 0.09, 0.470588)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="UpdateLabel" type="Label" parent="HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_4rxvh")
+theme_override_font_sizes/font_size = 50
+text = "升级！"
+
+[node name="AttributeItemChoose" type="GridContainer" parent="HBoxContainer/MarginContainer3/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(475, 125)
+layout_mode = 2
+theme_override_constants/h_separation = 5
+columns = 4
+
+[node name="AttributeItemTemplate" type="Panel" parent="HBoxContainer/MarginContainer3/VBoxContainer/AttributeItemChoose"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(115, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oo8it")
+
+[node name="Button" type="Button" parent="HBoxContainer/MarginContainer3/VBoxContainer/AttributeItemChoose/AttributeItemTemplate"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -30.0
+offset_right = -6.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxFlat_wm7x4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6uh37")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b8cr8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8nudw")
+text = "选择"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer3/VBoxContainer/AttributeItemChoose/AttributeItemTemplate"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer3/VBoxContainer/AttributeItemChoose/AttributeItemTemplate/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer3/VBoxContainer/AttributeItemChoose/AttributeItemTemplate/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vq7r6")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer3/VBoxContainer/AttributeItemChoose/AttributeItemTemplate/MarginContainer/HBoxContainer/Panel"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3xont")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer3/VBoxContainer/AttributeItemChoose/AttributeItemTemplate/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer3/VBoxContainer/AttributeItemChoose/AttributeItemTemplate/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4rxvh")
+theme_override_font_sizes/font_size = 14
+text = "攻击力"
+
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer3/VBoxContainer/AttributeItemChoose/AttributeItemTemplate/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_4rxvh")
+theme_override_font_sizes/font_size = 12
+text = "升级"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/MarginContainer3/VBoxContainer/AttributeItemChoose/AttributeItemTemplate"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = 2.5
+offset_right = -5.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_4rxvh")
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "[color=green]+2[/color] 基础伤害"
+fit_content = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RefreshButton" type="Button" parent="HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_4rxvh")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxFlat_8io4m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_leogy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tafgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bwf7y")
+text = "刷新  -2"
+alignment = 0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer2/RefreshButton"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -7.5
+offset_bottom = 7.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("AtlasTexture_tilbi")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 235)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_mhc3g")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4rxvh")
+theme_override_font_sizes/font_size = 18
+text = "属性"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="AttrList" type="VBoxContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AttrTemplate" type="HBoxContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AttrList"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="name" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AttrList/AttrTemplate"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4rxvh")
+theme_override_font_sizes/font_size = 10
+text = "最大血量"
+vertical_alignment = 1
+
+[node name="value" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AttrList/AttrTemplate"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_4rxvh")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_wtdd4")
+text = "100
+"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="ContinueButton" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(85, 40)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_ljkgi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iorbj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_83psd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6apfs")
+disabled = true
+text = "继续游戏"

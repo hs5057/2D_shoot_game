@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://kx34vsb54hv3"]
+[gd_scene load_steps=2 format=3 uid="uid://kx34vsb54hv3"]
 
-[ext_resource type="AudioStream" uid="uid://bila0lx0a6y6o" path="res://audio/pickup/699498__valenspire__coin_drop_03.wav" id="1_ydrt2"]
 [ext_resource type="Script" path="res://component/audio_player_component.gd" id="2_qx0j0"]
 
-[node name="AudioPlayerComponent" type="AudioStreamPlayer"]
-stream = ExtResource("1_ydrt2")
-volume_db = -5.0
+[node name="AudioPlayerComponent" type="AudioStreamPlayer2D"]
+volume_db = -60.0
+max_distance = 400.0
+max_polyphony = 5
 script = ExtResource("2_qx0j0")

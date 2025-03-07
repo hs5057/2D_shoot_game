@@ -7,5 +7,5 @@
 script = ExtResource("2_rmnyi")
 enemy_scene = ExtResource("1_t4y37")
 max_count = 70
-tick = 0.95
+tick = 0.99
 once_count = 4

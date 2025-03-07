@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dj4g1tstxh01u"]
+[gd_scene load_steps=39 format=3 uid="uid://dj4g1tstxh01u"]
 
 [ext_resource type="PackedScene" uid="uid://cmbrxrx3dglb2" path="res://scene/enemy/base_enemy.tscn" id="1_6nh7a"]
 [ext_resource type="Texture2D" uid="uid://clci8750mx755" path="res://texture/Ghoul/Ghoul Sprite Sheet 62 x 33.png" id="2_cvc4s"]
@@ -10,10 +10,6 @@ region = Rect2(0, 66, 62, 33)
 [sub_resource type="AtlasTexture" id="AtlasTexture_w0kbv"]
 atlas = ExtResource("2_cvc4s")
 region = Rect2(62, 66, 62, 33)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgunb"]
-atlas = ExtResource("2_cvc4s")
-region = Rect2(124, 66, 62, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4x6oo"]
 atlas = ExtResource("2_cvc4s")
@@ -30,6 +26,10 @@ region = Rect2(310, 66, 62, 33)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5eqft"]
 atlas = ExtResource("2_cvc4s")
 region = Rect2(372, 66, 62, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgunb"]
+atlas = ExtResource("2_cvc4s")
+region = Rect2(124, 66, 62, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lpjbh"]
 atlas = ExtResource("2_cvc4s")
@@ -141,9 +141,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_w0kbv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jgunb")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_4x6oo")
 }, {
 "duration": 1.0,
@@ -154,6 +151,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5eqft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgunb")
 }],
 "loop": false,
 "name": &"attack",
@@ -255,20 +255,46 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oue3w"]
+radius = 6.0
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4llp"]
+radius = 4.0
+height = 20.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pofls"]
+radius = 3.0
+height = 10.0
+
 [node name="Ghoul" instance=ExtResource("1_6nh7a")]
+y_sort_enabled = true
 motion_mode = 1
 wall_min_slide_angle = 0.0
+gold_found = 90
 
 [node name="Shadow" parent="." index="0"]
 position = Vector2(0, -2)
 
-[node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(1, -12)
-
 [node name="AnimatedSprite2D" parent="Body" index="0"]
 position = Vector2(2, -15)
 sprite_frames = SubResource("SpriteFrames_k63ww")
+animation = &"attack"
 autoplay = "move"
+frame = 6
+frame_progress = 1.0
 
-[node name="AtkArea" parent="." index="3"]
-unique_name_in_owner = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/HurtArea" index="0"]
+position = Vector2(0.5, -10.5)
+shape = SubResource("CapsuleShape2D_oue3w")
+debug_color = Color(0.662745, 1, 0, 0.419608)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AtkArea" index="0"]
+position = Vector2(13, -10)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_n4llp")
+debug_color = Color(0.910161, 0.000106273, 0.730944, 0.42)
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, -4.5)
+shape = SubResource("CapsuleShape2D_pofls")

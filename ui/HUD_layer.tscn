@@ -1,0 +1,310 @@
+[gd_scene load_steps=12 format=3 uid="uid://btjmcn186pg8e"]
+
+[ext_resource type="Script" path="res://ui/HUD_layer.gd" id="1_3r0if"]
+[ext_resource type="Script" path="res://ui/hud.gd" id="2_3rqpx"]
+[ext_resource type="FontFile" uid="uid://jgabob6qnqud" path="res://fonts/SmileySans-Oblique.ttf" id="3_rd53w"]
+[ext_resource type="Texture2D" uid="uid://b8j83kwa44c2m" path="res://texture/Items/coin-2.png" id="4_q8gx7"]
+[ext_resource type="Texture2D" uid="uid://rsfj2l2m4kxo" path="res://texture/Guns/gun1.png" id="5_fdnsi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0qly"]
+bg_color = Color(0.0509804, 0.0509804, 0.0509804, 0.235294)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.101961, 0.101961, 0.101961, 1)
+expand_margin_right = 1.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qmwt"]
+bg_color = Color(0.71, 0.3124, 0.3124, 0.784314)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.101961, 0.101961, 0.101961, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmo2i"]
+bg_color = Color(0.0509804, 0.0509804, 0.0509804, 0.117647)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.101961, 0.101961, 0.101961, 1)
+expand_margin_right = 1.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjlt8"]
+bg_color = Color(0.45098, 0.611765, 0.298039, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.101961, 0.101961, 0.101961, 1)
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpsqr"]
+atlas = ExtResource("4_q8gx7")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y38g4"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 0.517647)
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+anti_aliasing = false
+
+[node name="HUDLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_3r0if")
+
+[node name="HUD" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_3rqpx")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+layout_mode = 0
+offset_right = 177.0
+offset_bottom = 24.0
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 1
+
+[node name="HpLabel" type="Label" parent="HUD/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(18, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_rd53w")
+theme_override_font_sizes/font_size = 8
+text = "H P："
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HpBar" type="ProgressBar" parent="HUD/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0.113725, 0.278431, 0.0705882, 0.686275)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_rd53w")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_k0qly")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1qmwt")
+max_value = 1.0
+value = 0.8
+show_percentage = false
+
+[node name="HpInfo" type="Label" parent="HUD/MarginContainer/VBoxContainer/HBoxContainer/HpBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.5
+offset_top = -5.0
+offset_right = 10.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.13, 0.0303333, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("3_rd53w")
+theme_override_font_sizes/font_size = 8
+text = "80 / 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 1
+
+[node name="EXPLabel" type="Label" parent="HUD/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(18, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_rd53w")
+theme_override_font_sizes/font_size = 8
+text = "EXP："
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="EXPBar" type="ProgressBar" parent="HUD/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0.572549, 0.156863, 0.0705882, 0.686275)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_rd53w")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_nmo2i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gjlt8")
+max_value = 1.0
+value = 0.7
+show_percentage = false
+
+[node name="LvInfo" type="Label" parent="HUD/MarginContainer/VBoxContainer/HBoxContainer2/EXPBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 13)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -6.5
+offset_right = 9.0
+offset_bottom = 6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0.15, 0.035, 0.392157)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("3_rd53w")
+theme_override_font_sizes/font_size = 8
+text = "LV .99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HUD/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="CoinIcon" type="TextureRect" parent="HUD/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("AtlasTexture_wpsqr")
+stretch_mode = 3
+
+[node name="CoinCount" type="Label" parent="HUD/MarginContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.431373)
+theme_override_font_sizes/font_size = 8
+text = "9999"
+vertical_alignment = 1
+
+[node name="WeaponHUD" type="Control" parent="HUD"]
+custom_minimum_size = Vector2(175, 57)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -57.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/WeaponHUD"]
+custom_minimum_size = Vector2(125, 60)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Bullet" type="Label" parent="HUD/WeaponHUD/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_rd53w")
+theme_override_font_sizes/font_size = 10
+text = "30/30"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/WeaponHUD/HBoxContainer"]
+custom_minimum_size = Vector2(75, 60)
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="WeaponTexture" type="TextureRect" parent="HUD/WeaponHUD/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_fdnsi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/WeaponHUD/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="WeaponName" type="Label" parent="HUD/WeaponHUD/HBoxContainer/MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 13)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_rd53w")
+theme_override_font_sizes/font_size = 10
+text = "武器名称"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="LevelLabel" type="Label" parent="HUD"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 25)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_rd53w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y38g4")
+text = "关卡 1"
+horizontal_alignment = 1
+vertical_alignment = 1

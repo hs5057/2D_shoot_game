@@ -1,8 +1,9 @@
 extends Area2D
 
-@onready var audio_player_component: AudioStreamPlayer = $AudioPlayerComponent
+@onready var audio_player_component: AudioPlayerComponent = $AudioPlayerComponent
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@export var add_count: int = 1
 
 
 func _ready() -> void:
@@ -20,7 +21,7 @@ func disable_collision():
 
 
 func collect():
-	#GameEvents.emit_experience_ball_collected(1)
+	PlayerManager.emit_experience_collected(add_count)
 	queue_free()
 
 
@@ -44,7 +45,7 @@ func _on_area_entered(area:Area2D) -> void:
 	
 	# 调用这个方法，但是在下一个空闲帧时调用
 	Callable(disable_collision).call_deferred()
-
+	$Shadow.hide()
 	var tween = create_tween()
 	# 如果 parallel 为 true，那么在这个方法之后追加的 Tweener 将默认同时执行，而不是顺序执行。
 	tween.set_parallel()
@@ -52,9 +53,6 @@ func _on_area_entered(area:Area2D) -> void:
 	tween.tween_method(tween_collect.bind(global_position), 0.0, 1.0, .7)\
 	.set_ease(Tween.EASE_IN)\
 	.set_trans(Tween.TRANS_QUINT)
-	
-	# .set_delay(0.65) 表示前面花0.05秒执行以后等待0.65秒，和并行的0.7秒同步后，再清除
-	#tween.tween_property(sprite, "scale", Vector2(0.65, 0.65), 0.05).set_delay(0.65)
 	
 	# .chain()用于在使用 true 调用 set_parallel() 后，将两个 Tweener 串联。
 	tween.chain()

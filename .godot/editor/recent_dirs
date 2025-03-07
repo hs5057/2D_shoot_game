@@ -1,3 +1,9 @@
+res://texture/Without Sword (for gun)
+res://localization
+res://ui
+res://ui/update_scene
+res://scene/grenade
+res://texture/effects/Explosion3
 res://component
 res://texture/Items
 res://scene
@@ -5,8 +11,6 @@ res://texture/Ghoul
 res://resource/level
 res://script
 res://scene/weapon
-res://ui
-res://texture/Without Sword (for gun)
 res://scene/enemy
 res://texture/Without Sword (for gun)/left right
 res://texture/Without Sword (for gun)/Down

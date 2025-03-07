@@ -2,7 +2,6 @@ extends Node2D
 
 const PLAYER = preload("res://scene/player/player.tscn")
 
-@onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var land: TileMapLayer = %Land
 @onready var player_point: Marker2D = $PlayerPoint
 @onready var left_top_point: Marker2D = %LeftTopPoint
@@ -11,8 +10,7 @@ const PLAYER = preload("res://scene/player/player.tscn")
 @onready var bullet_node: Node2D = %BulletNode
 @onready var entity_node: Node2D = $EntityNode
 @onready var items: Node2D = %Items
-
-
+@onready var audio_player_component: AudioPlayerComponent = $AudioPlayerComponent
 
 
 func _ready() -> void:
@@ -21,8 +19,8 @@ func _ready() -> void:
 
 
 func on_game_start() -> void:
+	audio_player_component.play_random(true, -30)
 	LevelManager.new_level()
-	canvas_layer.show()
 	# 场景过渡
 	var tween = create_tween()
 	tween.tween_property(get_parent().color_rect,"modulate:a", 0.0, 0.5)

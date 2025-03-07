@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://crg0y04gmaau2"]
+
+[ext_resource type="FontFile" uid="uid://jgabob6qnqud" path="res://fonts/SmileySans-Oblique.ttf" id="1_0ekx8"]
+[ext_resource type="Script" path="res://ui/pause_scene.gd" id="1_srw7p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4cdc"]
+bg_color = Color(0.0648, 0.056, 0.1, 0.509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0dwt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ne1pe"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+anti_aliasing = false
+
+[node name="PauseScene" type="CanvasLayer"]
+process_mode = 3
+layer = 90
+visible = false
+script = ExtResource("1_srw7p")
+
+[node name="Panel" type="Panel" parent="."]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j4cdc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonResume" type="Button" parent="Panel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0ekx8")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxFlat_h0dwt")
+text = "继续游戏"
+
+[node name="ButtonQuit" type="Button" parent="Panel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0ekx8")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxFlat_ne1pe")
+text = "退出游戏"

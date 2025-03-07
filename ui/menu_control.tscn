@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://btoa6gpnajxfy"]
+
+[ext_resource type="Script" path="res://ui/menu_control.gd" id="1_aijbq"]
+[ext_resource type="FontFile" uid="uid://jgabob6qnqud" path="res://fonts/SmileySans-Oblique.ttf" id="1_tqccd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46wkj"]
+bg_color = Color(0.541176, 0.270588, 0.270588, 0.945098)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhs4b"]
+bg_color = Color(0.537255, 0.356863, 0.0862745, 0.784314)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bgsg"]
+bg_color = Color(0.14, 0.14, 0.14, 0.470588)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[node name="MenuControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aijbq")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(370, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -100.0
+offset_right = 185.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_tqccd")
+theme_override_font_sizes/font_size = 36
+text = "2D像素射击游戏"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -72.0
+offset_right = 37.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.077268, 0.0693067, 0.0349502, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_tqccd")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxFlat_46wkj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hhs4b")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bgsg")
+text = "开始游戏"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.077268, 0.0693067, 0.0349502, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_tqccd")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxFlat_46wkj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hhs4b")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bgsg")
+text = "退出游戏"

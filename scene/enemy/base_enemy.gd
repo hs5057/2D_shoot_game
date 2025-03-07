@@ -10,7 +10,7 @@ enum State {
 }
 
 @export var speed : float = 25.0 # 移动速度
-@export var gold_found : int = 10 # 金币掉落几率
+@export var gold_found : int = 15 # 金币掉落几率
 @onready var anim: AnimatedSprite2D = %AnimatedSprite2D
 @onready var body: Node2D = $Body
 @onready var atk_timer: Timer = $AtkTimer
@@ -19,12 +19,14 @@ enum State {
 @onready var shadow: Sprite2D = $Shadow
 @onready var hit_audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
+@onready var hurt_area: Area2D = %HurtArea
+
 
 const COIN_SCENE = preload("res://scene/coin.tscn")
 
 var current_state = State.IDLE # 当前状态
 var current_player = null # 当前目标玩家
-var can_attack : bool = true # 是否可以击
+var can_attack : bool = true # 是否可以攻击
 var enemy_data : EnemyData # 敌人属性
 var movement_delta
 var _tick : int = 0 # 用于优化寻找玩家坐标的频率，不让每个敌人在同一帧去寻找刷新
@@ -131,8 +133,12 @@ func _on_atk_timer_timeout() -> void:
 func on_death() -> void:
 	if current_state == State.DEATH: 
 		return
-	
+
 	collision_shape.set_deferred("disabled",true)
+	hurt_area.set_deferred("monitoring",false)
+	hurt_area.set_deferred("monitorable",false)
+	atk_area.set_deferred("monitoring",false)
+	atk_area.set_deferred("monitorable",false)
 	current_state = State.DEATH
 	anim.play("death")
 	shadow.hide()
@@ -143,6 +149,7 @@ func on_death() -> void:
 	self.call_deferred("queue_free")
 
 
+# 生成金币
 func spawn_coin() -> void:
 	if COIN_SCENE:
 		var coin = COIN_SCENE.instantiate()
@@ -153,7 +160,7 @@ func spawn_coin() -> void:
 func on_hit(_damage) -> void:
 	hit_audio.play()
 	current_state = State.HIT
-	Game.show_label(self,"-%s" %_damage)
+	#Game.show_label(self,"-%s" %_damage)
 	anim.play("hit")
 	await anim.animation_finished
 	current_state = State.IDLE

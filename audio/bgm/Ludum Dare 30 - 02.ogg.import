@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://j4jqggdqivmp"
+path="res://.godot/imported/Ludum Dare 30 - 02.ogg-bc8fafa8307dcf9183a9873334707e8e.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/bgm/Ludum Dare 30 - 02.ogg"
+dest_files=["res://.godot/imported/Ludum Dare 30 - 02.ogg-bc8fafa8307dcf9183a9873334707e8e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

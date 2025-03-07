@@ -1,0 +1,14 @@
+id,zh,en
+basic_damage,基础伤害叠加,basic_damage
+basic_damage_multiple,基础伤害倍率,basic_damage_multiple
+critical_rate,暴击率,critical_rate
+critical_damage_multiple,暴击伤害倍率,critical_damage_multiple
+run_speed,移动速度,run_speed
+gold,持有金币,gold
+pick_up_radius,拾取范围,pick_up_radius
+max_hp,最大生命值,max_hp
+current_hp,当前生命值,current_hp
+current_experience,当前经验值,current_experience
+health_recovery_rate,每秒恢复血量,health_recovery_rate
+max_experience,最大经验值,max_experience
+current_level,当前等级,current_level
